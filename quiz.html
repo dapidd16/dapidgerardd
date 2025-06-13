@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Pancasila - Kesadaran dan Semangat Kebangsaan</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe259, #ffa751);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #004d40;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 { margin: 0 0 0.5rem 0; font-weight: 600; font-size: 2.5rem; letter-spacing: 2px; }
+    header p { font-weight: 300; font-size: 1.2rem; letter-spacing: 1px; }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #00332c;
+      padding: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #ffa751;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffa751;
+      color: #00332c;
+      outline: none;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      padding: 2rem 3rem;
+    }
+    h2 {
+      color: #004d40;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #ffa751;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 10px 20px;
+      background-color: #004d40;
+      color: #ffa751;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .back-btn:hover { background-color: #00332c; color: #fff; text-decoration: none; }
+    form#quiz-form { display: flex; flex-direction: column; gap: 1.5rem; }
+    .question {
+      background-color: #f6f6f6;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+    }
+    .question p {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #004d40;
+      font-size: 1.1rem;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 0.4rem;
+      cursor: pointer;
+      font-weight: 500;
+      color: #333;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+    }
+    .options label:hover {
+      background-color: #ffe3b0;
+    }
+    input[type="radio"] { margin-right: 0.6rem; }
+    button#submit-quiz, button#retake-quiz {
+      align-self: center;
+      padding: 12px 32px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #004d40;
+      background: #ffa751;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #004d40;
+      text-align: center;
+    }
+    #chart-container {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+    footer {
+      background-color: #004d40;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-style: italic;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz Pancasila</h1>
+    <p>Uji Pengetahuan Anda tentang Nilai dan Semangat Pancasila</p>
+  </header>
+  <nav>
+    <a href="project.html">Beranda</a>
+    <a href="#quiz-section">Quiz</a>
+  </nav>
+  <main>
+    <a href="project.html" class="back-btn">← Kembali ke Beranda</a>
+    <h2 id="quiz-section">Quiz Pancasila</h2>
+    <form id="quiz-form">
+      <!-- Soal 1 sampai 6 -->
+      <div class="question">
+        <p>1. Apa sila pertama dari Pancasila?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a" /> Ketuhanan Yang Maha Esa</label>
+          <label><input type="radio" name="q1" value="b" /> Kemanusiaan yang adil dan beradab</label>
+          <label><input type="radio" name="q1" value="c" /> Persatuan Indonesia</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>2. Sila mana yang menekankan gotong royong?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a" /> Sila Kelima</label>
+          <label><input type="radio" name="q2" value="b" /> Sila Keempat</label>
+          <label><input type="radio" name="q2" value="c" /> Sila Ketiga</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>3. Apa makna Pancasila sebagai pandangan hidup bangsa?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a" /> Dasar nilai moral dan sosial</label>
+          <label><input type="radio" name="q3" value="b" /> Semboyan negara saja</label>
+          <label><input type="radio" name="q3" value="c" /> Hanya penting bagi pemerintah</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>4. Siapakah tokoh perumus Pancasila?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="a" /> Soekarno</label>
+          <label><input type="radio" name="q4" value="b" /> Jenderal Soedirman</label>
+          <label><input type="radio" name="q4" value="c" /> Hatta</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>5. Pancasila ditetapkan sebagai dasar negara pada tanggal?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a" /> 17 Agustus 1945</label>
+          <label><input type="radio" name="q5" value="b" /> 1 Juni 1945</label>
+          <label><input type="radio" name="q5" value="c" /> 18 Agustus 1945</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>6. Sila keempat berbunyi?</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="a" /> Keadilan Sosial bagi seluruh rakyat Indonesia</label>
+          <label><input type="radio" name="q6" value="b" /> Kerakyatan yang dipimpin oleh hikmat kebijaksanaan</label>
+          <label><input type="radio" name="q6" value="c" /> Persatuan Indonesia</label>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-quiz">Kirim Jawaban</button>
+      <button type="button" id="retake-quiz" style="display:none;">Ulangi Quiz</button>
+      <div id="result"></div>
+      <div id="chart-container"><canvas id="scoreChart"></canvas></div>
+    </form>
+  </main>
+  <footer>
+    <p>"Pancasila adalah jiwa bangsa, mari kita jaga dan hayati setiap nilai-nilainya dalam kehidupan kita sehari-hari."</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('quiz-form');
+    const resultDiv = document.getElementById('result');
+    const retakeBtn = document.getElementById('retake-quiz');
+    const correctAnswers = {
+      q1: 'a', q2: 'a', q3: 'a',
+      q4: 'a', q5: 'c', q6: 'b'
+    };
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      let unanswered = false;
+
+      for (const [key, correct] of Object.entries(correctAnswers)) {
+        const selected = form.querySelector(`input[name="${key}"]:checked`);
+        if (!selected) {
+          unanswered = true;
+          break;
+        }
+        if (selected.value === correct) score++;
+      }
+
+      if (unanswered) {
+        resultDiv.textContent = 'Harap jawab semua pertanyaan.';
+        resultDiv.style.color = 'red';
+        return;
+      }
+
+      const total = Object.keys(correctAnswers).length;
+      let grade = '';
+      if (score === total) grade = 'A';
+      else if (score >= total * 0.8) grade = 'B';
+      else if (score >= total * 0.6) grade = 'C';
+      else if (score >= total * 0.4) grade = 'D';
+      else grade = 'E';
+
+      resultDiv.innerHTML = `Skor Anda: ${score} dari ${total}<br>Nilai: <strong>${grade}</strong>`;
+      drawChart(score, total);
+      retakeBtn.style.display = 'inline-block';
+    });
+
+    retakeBtn.addEventListener('click', () => {
+      document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+      resultDiv.innerHTML = '';
+      retakeBtn.style.display = 'none';
+      if (scoreChart) scoreChart.destroy();
+    });
+
+    let scoreChart;
+    function drawChart(score, total) {
+      const ctx = document.getElementById('scoreChart').getContext('2d');
+      if (scoreChart) scoreChart.destroy();
+      scoreChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Skor'],
+          datasets: [{
+            label: 'Skor Anda',
+            data: [score],
+            backgroundColor: '#004d40'
+          }, {
+            label: 'Maksimal',
+            data: [total],
+            backgroundColor: '#ffa751'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'top' } },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: total
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

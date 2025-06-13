@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pancasila Saat Ini - Kesadaran dan Semangat Kebangsaan</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe259, #ffa751);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #004d40;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-weight: 300;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #00332c;
+      padding: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 80px;
+      z-index: 9;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #ffa751;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    nav a:hover, nav a:focus {
+      background-color: #ffa751;
+      color: #00332c;
+      outline: none;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      padding: 2rem 3rem;
+    }
+    section { margin-bottom: 2.5rem; }
+    section h2 {
+      color: #004d40;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #ffa751;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    section h2 .arrow {
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+    section.collapsed h2 .arrow {
+      transform: rotate(-90deg);
+    }
+    section p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-top: 0;
+    }
+    section.collapsed p { display: none; }
+    .pledge-btn {
+      display: block;
+      margin: 2rem auto 0 auto;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #004d40;
+      background: #ffa751;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(255,167,81,0.5);
+      transition: background-color 0.3s ease, box-shadow 0.4s ease;
+      user-select: none;
+    }
+    .pledge-btn:hover, .pledge-btn:focus {
+      background: #ff8c00;
+      box-shadow: 0 8px 18px rgba(255,140,0,0.7);
+      outline: none;
+    }
+    footer {
+      background-color: #004d40;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-style: italic;
+      letter-spacing: 1px;
+      user-select: none;
+      margin-top: auto;
+    }
+    @media (max-width: 600px) {
+      main { margin: 1rem; padding: 1.5rem; }
+      header h1 { font-size: 1.8rem; }
+      section h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pancasila Saat Ini</h1>
+    <p>Memahami Nilai, Kesadaran, dan Semangat Kebangsaan dalam Jiwa Nusantara</p>
+  </header>
+  <nav>
+    <a href="#overview" tabindex="0">Gambaran</a>
+    <a href="#problem" tabindex="0">Permasalahan</a>
+    <a href="#spirit" tabindex="0">Semangat</a>
+    <a href="#solutions" tabindex="0">Solusi</a>
+    <a href="quiz.html" tabindex="0">Quiz</a>
+  </nav>
+  <main>
+    <section id="overview">
+      <h2>Gambaran Pancasila Saat Ini <span class="arrow">▼</span></h2>
+      <p>
+        Pancasila merupakan landasan filosofis dan ideologi negara Indonesia yang menjadi arah dalam kehidupan berbangsa dan bernegara. Namun dalam realitas kehidupan modern saat ini, pemahaman terhadap nilai-nilai Pancasila kian memudar terutama di kalangan generasi muda.
+      </p>
+      <p>
+        Tantangan globalisasi, individualisme, dan pengaruh budaya asing yang tidak sesuai dengan kepribadian bangsa menjadi faktor penyebab lunturnya pengamalan Pancasila. Oleh karena itu, penting untuk merevitalisasi nilai-nilai Pancasila agar tetap relevan dan menjadi pedoman dalam kehidupan sehari-hari.
+      </p>
+    </section>
+    <section id="problem" class="collapsed">
+      <h2>Permasalahan Kurangnya Kesadaran Nilai Pancasila <span class="arrow">▼</span></h2>
+      <p>
+        Permasalahan utama adalah kurangnya pendidikan karakter dan pembiasaan nilai-nilai Pancasila di lingkungan keluarga, sekolah, dan masyarakat. Selain itu, maraknya ujaran kebencian, intoleransi, dan hoaks juga turut memperlemah sendi-sendi Pancasila.
+      </p>
+      <p>
+        Banyak generasi muda lebih akrab dengan budaya luar daripada mengenal dan mencintai tanah air sendiri. Hal ini mengakibatkan krisis identitas, hilangnya semangat persatuan, serta minimnya kepedulian sosial.
+      </p>
+    </section>
+    <section id="spirit" class="collapsed">
+      <h2>Semangat Mengembangkan Jiwa Berkebangsaan dan Wawasan Nusantara <span class="arrow">▼</span></h2>
+      <p>
+        Jiwa kebangsaan dapat dibentuk melalui pembelajaran sejarah bangsa, pelestarian budaya lokal, dan keterlibatan aktif dalam kegiatan sosial kemasyarakatan. Mewujudkan wawasan nusantara tidak hanya sebatas pengetahuan, tetapi juga sikap menghargai perbedaan serta memperkuat solidaritas antarsuku, agama, dan golongan.
+      </p>
+      <p>
+        Memaknai Pancasila berarti menjadikannya sebagai lensa dalam melihat realitas dan bertindak sesuai dengan nilai-nilainya, seperti keadilan sosial, musyawarah, dan gotong royong.
+      </p>
+    </section>
+    <section id="solutions" class="collapsed">
+      <h2>Solusi dan Langkah Nyata Mengamalkan Pancasila <span class="arrow">▼</span></h2>
+      <p>
+        Menghidupkan kembali Pancasila dalam kehidupan masyarakat bisa dilakukan melalui integrasi pendidikan karakter di sekolah, penguatan budaya lokal, serta literasi digital yang sehat. Selain itu, teladan dari pemimpin dan tokoh masyarakat dalam mengamalkan Pancasila sangat dibutuhkan.
+      </p>
+      <p>
+        Partisipasi aktif warga negara, mulai dari menjaga kebersihan lingkungan, menghargai perbedaan, hingga aktif dalam organisasi sosial adalah bentuk nyata pengamalan Pancasila dalam keseharian.
+      </p>
+    </section>
+    <button class="pledge-btn" aria-label="Klik untuk berjanji menghayati nilai Pancasila">
+      Saya Berjanji Menghayati Pancasila
+    </button>
+  </main>
+  <footer>
+    <p>"Pancasila adalah jiwa bangsa, mari kita jaga dan hayati setiap nilai-nilainya dalam kehidupan kita sehari-hari."</p>
+  </footer>
+  <script>
+    document.querySelectorAll('section h2').forEach(heading => {
+      heading.addEventListener('click', () => {
+        const parent = heading.parentElement;
+        parent.classList.toggle('collapsed');
+      });
+      heading.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          heading.click();
+        }
+      });
+    });
+    document.querySelector('.pledge-btn').addEventListener('click', () => {
+      alert('Terima kasih sudah berjanji untuk menghayati nilai Pancasila! Mari kita jalankan bersama dalam kehidupan sehari-hari.');
+    });
+  </script>
+</body>
+</html>
